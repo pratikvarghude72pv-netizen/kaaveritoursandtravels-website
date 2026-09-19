@@ -1,0 +1,29 @@
+import {LocalizedLink as Link} from "@/components/localized-link";
+import {BilingualText} from "@/components/language";
+import {EditorialPage} from "@/components/editorial";
+import {ParallaxMedia} from "@/components/parallax-media";
+import {createRouteMetadata} from "@/lib/seo";
+import {AnswerPanel} from "@/components/answer-panel";
+
+export const metadata=createRouteMetadata("/tourism");
+
+const destinations=[
+  {name:"Ajanta",tag:<BilingualText en="Ancient paintings · rock-cut heritage" mr="प्राचीन चित्रे · शैलकला वारसा"/>,image:"/generated/ajanta.webp",copy:<BilingualText en="A remarkable arc of caves known for mural paintings, sculpture and the quiet scale of an ancient place of learning." mr="भित्तिचित्रे, शिल्पकला आणि प्राचीन अध्ययनस्थळाची शांत भव्यता यासाठी प्रसिद्ध असलेल्या लेण्यांची विलक्षण रांग."/>,mr:"अजिंठा"},
+  {name:"Ellora",tag:<BilingualText en="Caves · architecture · living history" mr="लेणी · स्थापत्य · जिवंत इतिहास"/>,image:"/generated/ellora.webp",copy:<BilingualText en="A layered heritage site where Buddhist, Hindu and Jain traditions meet in one extraordinary carved landscape." mr="बौद्ध, हिंदू आणि जैन परंपरा एका विलक्षण कोरलेल्या परिसरात एकत्र येणारे बहुपेडी वारसास्थळ."/>,mr:"वेरूळ"},
+  {name:"Ghrishneshwar",tag:<BilingualText en="Temple town · devotion · proximity" mr="मंदिर परिसर · श्रद्धा · जवळीक"/>,image:"/generated/ghrishneshwar.webp",copy:<BilingualText en="A meaningful temple visit near Ellora, approached with enough time for the setting and the journey between places." mr="वेरूळजवळील अर्थपूर्ण मंदिरदर्शन; परिसर आणि दोन स्थळांमधील प्रवासासाठी पुरेसा वेळ ठेवून आखलेले." />,mr:"घृष्णेश्वर"},
+  {name:"Trimbakeshwar",tag:<BilingualText en="Jyotirlinga · Nashik region" mr="ज्योतिर्लिंग · नाशिक परिसर"/>,image:"/generated/trimbakeshwar.webp",copy:<BilingualText en="A temple-town journey planned around your preferred timing and the practical details of the day." mr="तुमच्या पसंतीच्या वेळेनुसार आणि दिवसाच्या व्यावहारिक तपशीलांनुसार आखलेला मंदिरनगरीचा प्रवास." />,mr:"त्र्यंबकेश्वर"},
+  {name:"Bhimashankar",tag:<BilingualText en="Temple · forested landscape" mr="मंदिर · वनरम्य परिसर"/>,image:"/generated/bhimashankar.webp",copy:<BilingualText en="A destination where the road and landscape become part of the experience, planned around your group." mr="रस्ता आणि निसर्ग अनुभवाचा भाग बनतात असे ठिकाण; तुमच्या गटानुसार नियोजन केलेले." />,mr:"भीमाशंकर"}
+];
+
+export default function Page(){
+  return <EditorialPage eyebrow={<BilingualText en="Tourism journeys · Sambhajinagar" mr="पर्यटन प्रवास · संभाजीनगर"/>} title={<BilingualText en="See more than" mr="स्थळापलीकडचे"/>}accent={<BilingualText en="the landmark." mr="अनुभवा."/>} intro={<BilingualText en="Five destinations. No fixed packages. Choose a place below and start a clear conversation about the journey." mr="पाच स्थळे. कोणतीही ठराविक पॅकेजेस नाहीत. खालील स्थळ निवडा आणि प्रवासाबद्दल स्पष्ट संवाद सुरू करा."/>} visual={destinations[1].image} serviceLabel="Tourism">
+    <section className="tour-intro shell"><div><p className="eyebrow"><BilingualText en="Ajanta · Ellora · Jyotirlinga routes" mr="अजिंठा · वेरूळ · ज्योतिर्लिंग मार्ग"/></p><h2><BilingualText en="Five destinations." mr="पाच स्थळे."/><br/><em><BilingualText en="Five distinct journeys." mr="पाच वेगळे प्रवास."/></em></h2></div><p><BilingualText en="Explore the rock-cut heritage of Ajanta and Ellora, visit Ghrishneshwar near Ellora, or enquire about a journey to Trimbakeshwar or Bhimashankar." mr="अजिंठा आणि वेरूळचा शैलकला वारसा अनुभवा, वेरूळजवळील घृष्णेश्वरला भेट द्या किंवा त्र्यंबकेश्वर किंवा भीमाशंकरच्या प्रवासाची चौकशी करा."/></p></section>
+    <section className="tour-destinations" data-motion-reveal>{destinations.map((destination,index)=>{
+      const targetId=destination.name.toLowerCase();
+      const headingId=`${targetId}-heading`;
+      return <article id={targetId} aria-labelledby={headingId} className={"tour-destination "+(index%2?"reverse":"")} key={destination.name}><ParallaxMedia className="tour-destination-image" src={destination.image} alt={`${destination.name}, Maharashtra`} sizes="(max-width: 760px) 100vw, 50vw" loading={destination.name==="Ajanta"||destination.name==="Ellora"?"eager":undefined}><span>{"0"+(index+1)+" / 05"}</span></ParallaxMedia><div className="tour-destination-copy"><p className="eyebrow">{destination.tag}</p><h2 id={headingId}>{destination.name}</h2><p>{destination.copy}</p><Link className="pill terra" href={"/contact?service=tourism&destination="+encodeURIComponent(destination.name)+"#enquiry"}><BilingualText en={"Enquire about "+destination.name+" ↗"} mr={destination.mr+" प्रवासाची चौकशी ↗"}/></Link></div></article>;
+    })}</section>
+    <section className="shell tour-process"><p className="eyebrow"><BilingualText en="Build the day around the destination" mr="स्थळाभोवती दिवसाचा प्रवास ठरवा"/></p><h2><BilingualText en="Starting point. Date." mr="सुरुवातीचे ठिकाण. तारीख."/><br/><em><BilingualText en="People travelling." mr="प्रवाशांची संख्या."/></em></h2><div className="process-grid"><div><span>01</span><strong><BilingualText en="Name the destination" mr="स्थळाचे नाव सांगा"/></strong><p><BilingualText en="Select Ajanta, Ellora, Ghrishneshwar, Trimbakeshwar or Bhimashankar." mr="अजिंठा, वेरूळ, घृष्णेश्वर, त्र्यंबकेश्वर किंवा भीमाशंकर निवडा."/></p></div><div><span>02</span><strong><BilingualText en="Set the starting point" mr="सुरुवातीचे ठिकाण सांगा"/></strong><p><BilingualText en="Add the pickup location so the route begins from the right place." mr="मार्ग योग्य ठिकाणापासून सुरू होण्यासाठी पिकअप ठिकाण जोडा."/></p></div><div><span>03</span><strong><BilingualText en="Add date and travellers" mr="तारीख आणि प्रवासी जोडा"/></strong><p><BilingualText en="Send the preferred date and number of people travelling in the same enquiry." mr="त्याच चौकशीत पसंतीची तारीख आणि प्रवाशांची संख्या पाठवा."/></p></div></div></section>
+    <AnswerPanel intent="tourism"/>
+  </EditorialPage>;
+}

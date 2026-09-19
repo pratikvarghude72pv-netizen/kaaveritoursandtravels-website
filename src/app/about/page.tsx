@@ -1,0 +1,13 @@
+import {LocalizedLink as Link} from "@/components/localized-link";
+import {BilingualText} from "@/components/language";
+import {EditorialPage,InfoBand} from "@/components/editorial";
+import {createRouteMetadata} from "@/lib/seo";
+
+export const metadata=createRouteMetadata("/about");
+
+export default function Page(){
+  return <EditorialPage eyebrow={<BilingualText en="Kaaveri Tours and Travels" mr="कावेरी टूर्स अँड ट्रॅव्हल्स"/>} title={<BilingualText en="Travel with" mr="प्रवास करा"/>} accent={<BilingualText en="intention." mr="उद्देशाने."/>} intro={<BilingualText en="A Chhatrapati Sambhajinagar travel business for tourism, one-way and corporate transportation enquiries." mr="पर्यटन, एकमार्गी आणि कॉर्पोरेट वाहतूक चौकशींसाठी छत्रपती संभाजीनगरमधील प्रवास व्यवसाय."/>} visual="/generated/ajanta.webp" showCta={false}>
+    <InfoBand eyebrow={<BilingualText en="What Kaaveri handles" mr="कावेरी कोणत्या सेवा देते"/>} title={<><BilingualText en="Three travel needs." mr="प्रवासाच्या तीन गरजा."/><br/><em><BilingualText en="One local contact." mr="एक स्थानिक संपर्क."/></em></>} copy={<BilingualText en="From Chhatrapati Sambhajinagar, Kaaveri receives enquiries for Maharashtra tourism journeys, one-way travel and recurring employee transportation." mr="छत्रपती संभाजीनगरमधून कावेरी महाराष्ट्र पर्यटन प्रवास, एकमार्गी प्रवास आणि नियमित कर्मचारी वाहतुकीच्या चौकश्या स्वीकारते."/>} items={[<BilingualText key="a" en="Ajanta, Ellora and temple destination enquiries" mr="अजिंठा, वेरूळ आणि मंदिरस्थळांच्या चौकश्या"/>,<BilingualText key="b" en="Point-to-point one-way travel" mr="एका ठिकाणाहून दुसऱ्या ठिकाणी एकमार्गी प्रवास"/>,<BilingualText key="c" en="Employee pickup, drop and shift transportation" mr="कर्मचारी पिकअप, ड्रॉप आणि शिफ्ट वाहतूक"/>,<BilingualText key="d" en="Website, WhatsApp, phone and email contact" mr="वेबसाइट, व्हॉट्सअॅप, फोन आणि ईमेल संपर्क"/>]}/>
+    <section className="shell story-grid"><div><p className="eyebrow"><BilingualText en="Based in Chhatrapati Sambhajinagar" mr="छत्रपती संभाजीनगरमध्ये स्थित"/></p><h2><BilingualText en="A direct contact for " mr="पर्यटन, मार्ग आणि टीमच्या"/><em><BilingualText en="place, route and team travel." mr="प्रवासासाठी थेट संपर्क."/></em></h2></div><div><p><BilingualText en="Choose the service that matches your journey. Kaaveri uses your route, date and group or employee details to continue the conversation without forcing you into a fixed package." mr="तुमच्या प्रवासाशी जुळणारी सेवा निवडा. ठराविक पॅकेज न लादता पुढील संवादासाठी कावेरी तुमचा मार्ग, तारीख आणि गट किंवा कर्मचाऱ्यांचे तपशील वापरते."/></p><Link className="pill terra" href="/contact#enquiry"><BilingualText en="Choose a service ↗" mr="सेवा निवडा ↗"/></Link></div></section>
+  </EditorialPage>;
+}

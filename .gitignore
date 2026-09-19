@@ -1,0 +1,17 @@
+node_modules
+.next/
+archive/
+tsconfig.tsbuildinfo
+tmp-*.log
+# Local planning and reference material
+.planning/
+qa-evidence/
+branding/
+logo/
+logo-kaaveri/
+scripts/
+AGENTS.md
+Kaaveri_Tours_Travels_Internal_MOM_Letterhead.pdf
+public/destinations/
+public/generated/*.png
+public/generated/*.avif
