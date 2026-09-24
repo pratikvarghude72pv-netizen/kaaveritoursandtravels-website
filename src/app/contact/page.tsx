@@ -17,7 +17,7 @@ export default function Page(){
         <p className="eyebrow"><BilingualText en="Start with the right details" mr="योग्य तपशीलांपासून सुरुवात करा"/></p>
         <h1><BilingualText en="Let’s plan the" mr="पुढचा"/><br/><em><BilingualText en="next move." mr="प्रवास आखूया."/></em></h1>
         <p className="lead"><BilingualText en="Choose what you need below. The form changes with your service so you only fill in what matters." mr="खाली तुमची गरज निवडा. सेवेनुसार फॉर्म बदलेल, त्यामुळे आवश्यक तेवढेच तपशील भरा."/></p>
-        <div className="contact-direct"><a className="pill terra" href="https://wa.me/919272727216?text=Hello%20Kaaveri%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noreferrer"><BilingualText en="WhatsApp us ↗" mr="व्हॉट्सअॅप करा ↗"/></a><span><a href="tel:+919272727216">9272727216</a> / <a href="tel:+918600320320">8600320320</a></span></div>
+        <div className="contact-direct"><span><a href="tel:+919272727216">9272727216</a> / <a href="tel:+918600320320">8600320320</a></span></div>
       </div>
       <div className="contact-bento">
         <ParallaxMedia className="bento-large" src="/generated/ellora.webp" alt="Ellora caves in Maharashtra" sizes="(max-width: 760px) 68vw, 36vw"><span><BilingualText en="Ellora · Maharashtra" mr="वेरूळ · महाराष्ट्र"/></span></ParallaxMedia>

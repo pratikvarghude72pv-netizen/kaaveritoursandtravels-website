@@ -13,10 +13,10 @@ const services={
 
 const url=(path:CanonicalPath,locale:Locale)=>absoluteUrl(localizedPath(path,locale));
 
-export function siteGraph(locale:Locale){
+export function siteGraph(){
   return {"@context":"https://schema.org","@graph":[
-    {"@type":"TravelAgency","@id":`${businessData.url}#business`,name:businessData.name,url:businessData.url,logo:businessData.logo,address:{"@type":"PostalAddress",...businessData.address},telephone:businessData.telephone,email:businessData.email},
-    {"@type":"WebSite","@id":`${businessData.url}#website`,url:businessData.url,name:businessData.name,inLanguage:locale==="mr"?"mr-IN":"en-IN",publisher:{"@id":`${businessData.url}#business`}}
+    {"@type":"TravelAgency","@id":`${businessData.url}#business`,name:businessData.name,url:businessData.url,logo:businessData.logo,address:{"@type":"PostalAddress",...businessData.address},telephone:businessData.telephone,email:businessData.email,areaServed:{"@type":"AdministrativeArea",name:"Maharashtra, India"},contactPoint:{"@type":"ContactPoint",telephone:businessData.telephone[0],email:businessData.email,contactType:"customer service",areaServed:"IN",availableLanguage:["English","Marathi"]}},
+    {"@type":"WebSite","@id":`${businessData.url}#website`,url:businessData.url,name:businessData.name,inLanguage:["en-IN","mr-IN"],publisher:{"@id":`${businessData.url}#business`}}
   ]};
 }
 

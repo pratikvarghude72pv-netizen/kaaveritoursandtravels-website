@@ -23,8 +23,14 @@ export function absoluteUrl(path:CanonicalPath|`/${string}`){
   return url.toString();
 }
 
-export function isProductionIndexable(env:string|undefined=process.env.VERCEL_ENV){
-  return env==="production";
+export function isProductionIndexable(
+  env:string|undefined=process.env.VERCEL_ENV,
+  allowIndexing:string|undefined=process.env.NEXT_PUBLIC_ALLOW_INDEXING
+){
+  // A deployment can be public long before its final domain is ready. Keep every
+  // preview (and an accidental production deployment) out of search until the
+  // owner deliberately enables indexing after the canonical www domain works.
+  return env==="production"&&allowIndexing==="true";
 }
 
 export function robotsPolicy(env?:string):Metadata["robots"]{

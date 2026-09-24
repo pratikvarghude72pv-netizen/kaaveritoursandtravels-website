@@ -15,3 +15,6 @@ Kaaveri_Tours_Travels_Internal_MOM_Letterhead.pdf
 public/destinations/
 public/generated/*.png
 public/generated/*.avif
+.vercel
+.env*
+!.env.example

@@ -5,6 +5,7 @@ import Link from "next/link";
 import {usePathname,useRouter} from "next/navigation";
 import {useEffect,useRef,useState} from "react";
 import {useLanguage} from "@/components/language";
+import {WhatsAppEnquiry} from "@/components/whatsapp-enquiry";
 import {canonicalPathFor,localizedPath} from "@/lib/locale";
 
 export function Header(){
@@ -112,7 +113,7 @@ export function Header(){
 
   return <header ref={headerRef} className={"site-header shell "+(hidden&&!open?"nav-hidden ":"")+(onDark&&!open?"on-dark":"")}>
     <Link className="brand" href={local("/")} onClick={()=>setOpen(false)}>
-      <Image className="brand-logo brand-logo-primary" src="/brand/kaaveri-logo-primary.png" width={640} height={193} alt="Kaaveri Tours and Travels" priority/>
+      <Image className="brand-logo brand-logo-primary" src="/brand/kaaveri-logo-white.png" width={1927} height={612} alt="Kaaveri Tours and Travels" priority/>
     </Link>
     <button ref={triggerRef} className="menu-toggle" type="button" aria-label={navigationLabel} aria-expanded={open} aria-controls="site-navigation-panel" onClick={toggleMenu}>
       <span></span><span></span>
@@ -135,13 +136,11 @@ export function Footer(){
   const marathi=language==="mr";
   const local=(path:Parameters<typeof localizedPath>[0])=>localizedPath(path,language);
   return <>
-    <a className="whatsapp-float" href="https://wa.me/919272727216?text=Hello%20Kaaveri%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noreferrer" aria-label={marathi?"व्हॉट्सअॅपवर चौकशी करा":"Open WhatsApp enquiry"}>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.9-1.3A9.5 9.5 0 1 0 12 2.5Zm0 17a7.5 7.5 0 0 1-3.8-1l-.3-.2-2.9.8.8-2.8-.2-.3A7.5 7.5 0 1 1 12 19.5Zm4.1-5.4c-.2-.1-1.1-.5-1.3-.6-.2-.1-.3-.1-.5.1l-.6.7c-.1.2-.3.2-.5.1-1.7-.8-2.8-2.3-3-2.5-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.3 0-.4l-.6-1.4c-.2-.4-.3-.4-.5-.4h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.3c.1.2 1.6 2.5 3.9 3.5.5.2.9.3 1.4.1.4-.1 1.1-.5 1.3-1 .2-.5.2-1 .1-1.1 0-.1-.2-.2-.4-.3Z"/></svg>
-    </a>
+    <WhatsAppEnquiry/>
     <footer className="site-footer">
       <div className="shell footer-grid">
         <div>
-          <div className="brand footer-brand"><Image className="brand-logo brand-logo-primary" src="/brand/kaaveri-logo-primary.png" width={640} height={193} alt="Kaaveri Tours and Travels"/></div>
+          <div className="brand footer-brand"><Image className="brand-logo brand-logo-primary" src="/brand/kaaveri-logo-white.png" width={1927} height={612} alt="Kaaveri Tours and Travels"/></div>
           <p>{marathi?"छत्रपती संभाजीनगर, महाराष्ट्रातून विचारपूर्वक प्रवास.":"Thoughtful travel from Chhatrapati Sambhajinagar, Maharashtra."}</p>
         </div>
         <div>

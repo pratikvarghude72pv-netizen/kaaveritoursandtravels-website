@@ -7,8 +7,12 @@ import "./globals.css";
 import {LanguageProvider} from "@/components/language";
 import {FragmentFocus} from "@/components/fragment-focus";
 import {MotionReveal} from "@/components/motion-reveal";
+import {SiteStructuredData} from "@/components/site-structured-data";
 import {SITE_ORIGIN,robotsPolicy} from "@/lib/seo";
 import {siteData} from "@/lib/site-data";
+
+const googleVerification=process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
+const bingVerification=process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION?.trim();
 
 export const metadata:Metadata={
   metadataBase:new URL(SITE_ORIGIN),
@@ -20,7 +24,11 @@ export const metadata:Metadata={
   manifest:"/manifest.webmanifest",
   icons:{icon:[{url:"/icons/favicon-16x16.png",sizes:"16x16",type:"image/png"},{url:"/icons/favicon-32x32.png",sizes:"32x32",type:"image/png"}],apple:[{url:"/icons/apple-touch-icon.png",sizes:"180x180",type:"image/png"}]},
   formatDetection:{telephone:false,email:false,address:false},
-  robots:robotsPolicy()
+  robots:robotsPolicy(),
+  verification:googleVerification||bingVerification?{
+    ...(googleVerification?{google:googleVerification}:{}),
+    ...(bingVerification?{other:{"msvalidate.01":bingVerification}}:{})
+  }:undefined
 };
 
 export const viewport:Viewport={
@@ -30,5 +38,5 @@ export const viewport:Viewport={
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}){
-  return <html lang="en" data-scroll-behavior="smooth"><body suppressHydrationWarning><LanguageProvider><FragmentFocus/><MotionReveal/>{children}</LanguageProvider></body></html>;
+  return <html lang="en" data-scroll-behavior="smooth"><body suppressHydrationWarning><SiteStructuredData/><LanguageProvider><FragmentFocus/><MotionReveal/>{children}</LanguageProvider></body></html>;
 }
