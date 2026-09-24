@@ -3,8 +3,8 @@ import {localizedPath,type Locale} from "@/lib/locale";
 import {absoluteUrl,type CanonicalPath} from "@/lib/seo";
 import {answerContent} from "@/lib/answer-content";
 
-const labels={en:{home:"Home",about:"About",tourism:"Tourism",oneWay:"One-way Travel",corporate:"Corporate Transportation",contact:"Contact"},mr:{home:"मुख्यपृष्ठ",about:"आमच्याबद्दल",tourism:"पर्यटन",oneWay:"एकमार्गी प्रवास",corporate:"कॉर्पोरेट वाहतूक",contact:"संपर्क"}} as const;
-const pageLabels:Record<Exclude<CanonicalPath,"/">,keyof typeof labels.en>={"/about":"about","/tourism":"tourism","/one-way-travel":"oneWay","/corporate-travel":"corporate","/contact":"contact"};
+const labels={en:{home:"Home",about:"About",tourism:"Tourism",oneWay:"One-way Travel",corporate:"Corporate Transportation",vehicles:"Vehicles",contact:"Contact"},mr:{home:"मुख्यपृष्ठ",about:"आमच्याबद्दल",tourism:"पर्यटन",oneWay:"एकमार्गी प्रवास",corporate:"कॉर्पोरेट वाहतूक",vehicles:"वाहने",contact:"संपर्क"}} as const;
+const pageLabels:Record<Exclude<CanonicalPath,"/">,keyof typeof labels.en> = {"/about":"about","/tourism":"tourism","/one-way-travel":"oneWay","/corporate-travel":"corporate","/vehicles":"vehicles","/contact":"contact"};
 const services={
   "/tourism":answerContent.tourism,
   "/one-way-travel":answerContent.oneWay,

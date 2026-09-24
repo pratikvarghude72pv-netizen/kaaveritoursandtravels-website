@@ -3,13 +3,15 @@
 import {useEffect,useRef,useState} from "react";
 import {createPortal} from "react-dom";
 import {useLanguage} from "@/components/language";
+import {vehicleOptions} from "@/lib/vehicles";
 
 type Service="tourism"|"one-way"|"corporate";
 type Values=Record<string,string>;
+type ModalField={key:string;en:string;mr:string;date?:boolean;options?:{value:string;en:string;mr:string}[]};
 
-const serviceCopy:Record<Service,{en:string;mr:string;fields:{key:string;en:string;mr:string;date?:boolean}[]}>= {
-  tourism:{en:"Tourism",mr:"पर्यटन",fields:[{key:"destination",en:"Destination",mr:"स्थळ"},{key:"date",en:"Travel date",mr:"प्रवासाची तारीख",date:true},{key:"pickup",en:"Pickup point",mr:"पिकअप ठिकाण"},{key:"travellers",en:"Travellers",mr:"प्रवासी"}]},
-  "one-way":{en:"One-way travel",mr:"एकमार्गी प्रवास",fields:[{key:"pickup",en:"Pickup point",mr:"पिकअप ठिकाण"},{key:"drop",en:"Drop point",mr:"ड्रॉप ठिकाण"},{key:"date",en:"Travel date",mr:"प्रवासाची तारीख",date:true},{key:"passengers",en:"Passengers",mr:"प्रवासी संख्या"}]},
+const serviceCopy:Record<Service,{en:string;mr:string;fields:ModalField[];}> = {
+  tourism:{en:"Tourism",mr:"पर्यटन",fields:[{key:"destination",en:"Destination",mr:"स्थळ"},{key:"date",en:"Travel date",mr:"प्रवासाची तारीख",date:true},{key:"pickup",en:"Pickup point",mr:"पिकअप ठिकाण"},{key:"travellers",en:"Travellers",mr:"प्रवासी"},{key:"vehicle",en:"Preferred vehicle",mr:"पसंतीचे वाहन",options:[...vehicleOptions]}]},
+  "one-way":{en:"One-way travel",mr:"एकमार्गी प्रवास",fields:[{key:"pickup",en:"Pickup point",mr:"पिकअप ठिकाण"},{key:"drop",en:"Drop point",mr:"ड्रॉप ठिकाण"},{key:"date",en:"Travel date",mr:"प्रवासाची तारीख",date:true},{key:"passengers",en:"Passengers",mr:"प्रवासी संख्या"},{key:"vehicle",en:"Preferred vehicle",mr:"पसंतीचे वाहन",options:[...vehicleOptions]}]},
   corporate:{en:"Corporate transportation",mr:"कॉर्पोरेट वाहतूक",fields:[{key:"company",en:"Company / organisation",mr:"कंपनी / संस्था"},{key:"route",en:"Pickup and drop route",mr:"पिकअप आणि ड्रॉप मार्ग"},{key:"schedule",en:"Shift / schedule",mr:"शिफ्ट / वेळापत्रक"},{key:"employees",en:"Employees or buses required",mr:"कर्मचारी किंवा आवश्यक बस"}]}
 };
 
@@ -68,7 +70,7 @@ export function WhatsAppEnquiry(){
           <div className="whatsapp-form-grid">
             <label>{copy.name} *<input autoComplete="name" value={values.name||""} onChange={event=>update("name",event.target.value)}/></label>
             <label>{copy.phone} *<input type="tel" autoComplete="tel" value={values.phone||""} onChange={event=>update("phone",event.target.value)}/></label>
-            {active.fields.map(field=><label key={field.key}>{field[language]}<input type={field.date?"date":"text"} min={field.date?today:undefined} value={values[field.key]||""} onChange={event=>update(field.key,event.target.value)}/></label>)}
+            {active.fields.map(field=>field.options?<label key={field.key}>{field[language]}<select value={values[field.key]||""} onChange={event=>update(field.key,event.target.value)}><option value="">{language==="mr"?"कोणतीही अट नाही":"No preference"}</option>{field.options.map(option=><option key={option.value} value={option.value}>{option[language]}</option>)}</select></label>:<label key={field.key}>{field[language]}<input type={field.date?"date":"text"} min={field.date?today:undefined} value={values[field.key]||""} onChange={event=>update(field.key,event.target.value)}/></label>)}
           </div>
           <label className="whatsapp-notes">{copy.notes}<textarea rows={3} maxLength={1200} value={values.notes||""} onChange={event=>update("notes",event.target.value)}/></label>
           {error&&<p className="whatsapp-form-error" role="alert">{error}</p>}

@@ -27,8 +27,8 @@ export type EnquiryResult=
 
 const topLevelKeys=new Set(["version","requestId","language","service","name","phone","details","message","website"]);
 const detailKeys:Record<EnquiryService,Set<string>>={
-  tourism:new Set(["destination","preferredDate","travellers"]),
-  "one-way":new Set(["pickupPoint","dropPoint","travelDate","passengers"]),
+  tourism:new Set(["destination","preferredDate","travellers","vehicle"]),
+  "one-way":new Set(["pickupPoint","dropPoint","travelDate","passengers","vehicle"]),
   corporate:new Set(["company","route","schedule","employeesOrBuses"])
 };
 const uuidV4=/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;

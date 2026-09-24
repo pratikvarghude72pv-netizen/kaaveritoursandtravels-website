@@ -2,7 +2,7 @@ import type {CanonicalPath} from "@/lib/seo";
 
 export type Locale="en"|"mr";
 export const locales=["en","mr"] as const;
-export const englishPaths=["/","/about","/tourism","/one-way-travel","/corporate-travel","/contact"] as const satisfies readonly CanonicalPath[];
+export const englishPaths=["/","/about","/tourism","/one-way-travel","/corporate-travel","/vehicles","/contact"] as const satisfies readonly CanonicalPath[];
 
 export function localizedPath(path:CanonicalPath,locale:Locale):`/${string}`{
   if(locale==="en")return path;

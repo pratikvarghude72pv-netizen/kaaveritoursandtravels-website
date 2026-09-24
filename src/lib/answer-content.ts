@@ -11,6 +11,10 @@ export const answerContent={
     en:{heading:"What should a corporate enquiry include?",body:"Share the company and contact details, route or stops, shift timings and approximate employee movement. The enquiry starts a review and does not promise a vehicle or availability."},
     mr:{heading:"कॉर्पोरेट चौकशीत काय समाविष्ट करावे?",body:"कंपनी व संपर्क तपशील, मार्ग किंवा थांबे, शिफ्टच्या वेळा आणि अंदाजे कर्मचारी प्रवास सांगा. चौकशीनंतर तपासणी सुरू होते; वाहन किंवा उपलब्धतेची हमी दिली जात नाही."}
   },
+  vehicles:{
+    en:{heading:"Which vehicle should I ask about?",body:"Sedans suit up to four passengers with luggage, while Innova Crysta style MPVs carry seven in comfort. Mention your preferred vehicle with the route, date and group size. The exact vehicle is confirmed during the conversation, never assumed on this page."},
+    mr:{heading:"मला कोणत्या गाडीबद्दल विचारावे?",body:"चार प्रवासी व सामानासाठी सेडान योग्य; सात प्रवाशांच्या आरामदायक प्रवासासाठी इनोव्हा क्रिस्टा प्रकारची एम.पी.व्ही. तुमचा मार्ग, तारीख, गट आणि पसंतीचे वाहन सांगा. नेमके वाहन संवादात निश्चित होते, फक्त या पानावर गृहीत धरले जात नाही."}
+  },
   contact:{
     en:{heading:"What happens after I submit?",body:"Your details are sent as a booking request for manual review. Kaaveri can then contact you to discuss the requirement. Submission does not confirm a booking, vehicle, itinerary, price or availability."},
     mr:{heading:"फॉर्म पाठवल्यानंतर काय होते?",body:"तुमचे तपशील मॅन्युअल तपासणीसाठी बुकिंग विनंती म्हणून पाठवले जातात. त्यानंतर गरजेबद्दल चर्चा करण्यासाठी कावेरी तुमच्याशी संपर्क करू शकते. फॉर्म पाठवल्याने बुकिंग, वाहन, प्रवास आराखडा, किंमत किंवा उपलब्धता निश्चित होत नाही."}

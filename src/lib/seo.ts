@@ -11,6 +11,7 @@ export const canonicalRoutes={
   "/tourism":{title:"Maharashtra Tourism Travel Enquiries",description:"Explore Ajanta, Ellora, Ghrishneshwar, Trimbakeshwar and Bhimashankar, then send your travel requirement."},
   "/one-way-travel":{title:"One-Way Travel Enquiries",description:"Send your route, travel date and passenger details for a one-way travel enquiry with Kaaveri."},
   "/corporate-travel":{title:"Corporate Transportation Enquiries",description:"Discuss employee, team and business transportation requirements with Kaaveri Tours and Travels."},
+  "/vehicles":{title:"Travel Vehicles — Sedan and Innova Crysta Enquiries",description:"Sedan and Innova Crysta style travel classes for tourism, one-way and group journeys from Chhatrapati Sambhajinagar."},
   "/contact":{title:"Contact Kaaveri Tours and Travels",description:"Send a travel enquiry or contact Kaaveri by WhatsApp, phone or email in Chhatrapati Sambhajinagar."}
 } as const;
 

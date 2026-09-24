@@ -5,6 +5,8 @@ import corporate from "@/assets/media/corporate-real.webp";
 import ellora from "@/assets/media/ellora-real.webp";
 import ghrishneshwar from "@/assets/media/ghrishneshwar-real.webp";
 import oneWay from "@/assets/media/one-way-real.webp";
+import crysta from "@/assets/media/crysta-real.webp";
+import sedan from "@/assets/media/sedan-real.webp";
 import trimbakeshwar from "@/assets/media/trimbakeshwar-real.webp";
 
 export type SiteImage = StaticImageData;
@@ -18,4 +20,6 @@ export const siteMedia = {
   ghrishneshwar,
   oneWay,
   trimbakeshwar,
+  crysta,
+  sedan,
 } as const;

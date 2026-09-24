@@ -124,6 +124,7 @@ export function Header(){
         <Link onClick={closeForNavigation} href={local("/tourism")}>{language==="mr"?"पर्यटन":"Tourism"}</Link>
         <Link onClick={closeForNavigation} href={local("/one-way-travel")}>{language==="mr"?"एकमार्गी प्रवास":"One-way Travel"}</Link>
         <Link onClick={closeForNavigation} href={local("/corporate-travel")}>{language==="mr"?"कॉर्पोरेट वाहतूक":"Corporate Transportation"}</Link>
+        <Link onClick={closeForNavigation} href={local("/vehicles")}>{language==="mr"?"वाहने":"Vehicles"}</Link>
       </nav>
       <Link className="language-toggle" href={languageHref} onClick={preserveLanguageContext} hrefLang={targetLanguage==="mr"?"mr-IN":"en-IN"} aria-label={language==="mr"?"इंग्रजी निवडा":"Switch to Marathi"}>{language==="en"?"मराठी":"English"}</Link>
       <Link className="pill dark" href={`${local("/contact")}#enquiry`} onClick={closeForNavigation}>{language==="mr"?"चौकशी करा":"Enquire ↗"}</Link>
@@ -152,6 +153,7 @@ export function Footer(){
           <Link href={local("/tourism")}>{marathi?"पर्यटन प्रवास":"Tourism journeys"}</Link>
           <Link href={local("/one-way-travel")}>{marathi?"एकमार्गी प्रवास":"One-way travel"}</Link>
           <Link href={local("/corporate-travel")}>{marathi?"कॉर्पोरेट वाहतूक":"Corporate transportation"}</Link>
+          <Link href={local("/vehicles")}>{marathi?"आमची वाहने":"Our vehicles"}</Link>
         </div>
         <div>
           <strong>{marathi?"संपर्क":"Talk to us"}</strong>
