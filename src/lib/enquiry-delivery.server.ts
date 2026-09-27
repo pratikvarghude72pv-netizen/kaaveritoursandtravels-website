@@ -12,19 +12,24 @@ function configured(){
   return {apiKey,from};
 }
 
+const labels:Record<string,string>={destination:"Destination",preferredDate:"Travel date",travellers:"Travellers",vehicle:"Vehicle",pickupPoint:"Pickup point",dropPoint:"Drop point",travelDate:"Travel date",passengers:"Passengers",company:"Company",route:"Pickup areas and workplace",startDate:"Start date",schedule:"Shift timings",employees:"Employees"};
+const serviceNames:Record<ValidEnquiry["service"],string>={tourism:"Tourism","one-way":"One-way travel",corporate:"Employee transport"};
+
 function plainText(enquiry:ValidEnquiry){
-  const details=Object.entries(enquiry.details).map(([key,value])=>`${key}: ${value}`);
+  const details=Object.entries(enquiry.details).map(([key,value])=>`${labels[key]??key}: ${value}`);
+  const whatsapp=`https://wa.me/${enquiry.phone.replace(/\D/g,"")}`;
   return [
-    "New website enquiry request",
-    `Request ID: ${enquiry.requestId}`,
-    `Language: ${enquiry.language}`,
-    `Service: ${enquiry.service}`,
+    "New website enquiry",
+    `Service: ${serviceNames[enquiry.service]}`,
     `Name: ${enquiry.name}`,
-    `Phone or WhatsApp: ${enquiry.phone}`,
+    `Mobile: ${enquiry.phone}`,
+    `Reply on WhatsApp: ${whatsapp}`,
     ...details,
-    ...(enquiry.message?[`Additional details: ${enquiry.message}`]:[]),
+    ...(enquiry.message?[`Other details: ${enquiry.message}`]:[]),
     "",
-    "This is an enquiry request for manual review. It is not a booking confirmation."
+    `Language used on the site: ${enquiry.language==="mr"?"Marathi":"English"}`,
+    `Request ID: ${enquiry.requestId}`,
+    "This is an enquiry, not a booking."
   ].join("\n");
 }
 
@@ -46,7 +51,9 @@ export const enquiryDelivery:EnquiryTransport={
         body:JSON.stringify({
           from:config.from,
           to:[DESTINATION],
-          subject:`Kaaveri website enquiry · ${enquiry.service}`,
+          // The sender address has no inbox (Resend's shared sender or a no-mailbox domain address), so replies go to the business Gmail.
+          reply_to:DESTINATION,
+          subject:`Website enquiry: ${serviceNames[enquiry.service]}, ${enquiry.name}`,
           text:plainText(enquiry)
         })
       });

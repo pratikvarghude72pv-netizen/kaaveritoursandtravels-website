@@ -1,5 +1,10 @@
-import {LanguageProvider} from "@/components/language";
+import type {Metadata,Viewport} from "next";
+import {RootDocument} from "@/components/root-document";
+import {rootMetadata,rootViewport} from "@/lib/seo";
 
-export default function MarathiLayout({children}:{children:React.ReactNode}){
-  return <LanguageProvider language="mr"><div lang="mr">{children}</div></LanguageProvider>;
+export const metadata:Metadata=rootMetadata("mr");
+export const viewport:Viewport=rootViewport;
+
+export default function MarathiRootLayout({children}:{children:React.ReactNode}){
+  return <RootDocument lang="mr">{children}</RootDocument>;
 }

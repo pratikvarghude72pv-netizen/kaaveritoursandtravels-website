@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // English and Marathi use separate root layouts, so unmatched URLs need a global 404.
+  experimental: {
+    globalNotFound: true,
+  },
 };
 
 export default nextConfig;

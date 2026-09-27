@@ -4,16 +4,18 @@ import {useEffect} from "react";
 import {usePathname} from "next/navigation";
 
 const registeredSelectors=[
-  ".intro-strip",
-  ".services-section",
-  ".feature-section",
-  ".places-section",
-  ".home-cta",
+  ".section-heading",
+  ".strip-grid",
+  ".service-grid",
+  ".feature-grid",
+  ".dest-carousel",
+  ".vehicle-cards",
+  ".faq-section",
+  ".cta-inner",
   ".tour-intro",
-  ".tour-destination",
   ".tour-process",
   ".contact-form-section",
-  ".contact-faq",
+  ".contact-methods",
 ].join(",");
 const selector="[data-motion-reveal]";
 

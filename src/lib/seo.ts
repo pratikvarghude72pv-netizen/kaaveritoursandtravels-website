@@ -1,19 +1,45 @@
-import type {Metadata} from "next";
+import type {Metadata,Viewport} from "next";
 import {siteData} from "@/lib/site-data";
 import {languageAlternatePaths,localizedPath,type Locale} from "@/lib/locale";
 
-export const SITE_ORIGIN="https://www.kaaveritoursandtravels.com" as const;
+// Vercel serves the apex as the production domain; www currently has no valid certificate.
+export const SITE_ORIGIN="https://kaaveritoursandtravels.com" as const;
 export const SOCIAL_IMAGE_PATH="/social/kaaveri-share.png" as const;
 
+const brand={en:siteData.name,mr:"कावेरी टूर्स अँड ट्रॅव्हल्स"} as const;
+
+type RouteCopy={title:string;description:string};
+
 export const canonicalRoutes={
-  "/":{title:"Kaaveri Tours and Travels",description:"Tourism, one-way and corporate transportation enquiries from Chhatrapati Sambhajinagar, Maharashtra."},
-  "/about":{title:"About Kaaveri Tours and Travels",description:"Learn how Kaaveri handles tourism, one-way and corporate transportation enquiries through clear, direct conversations."},
-  "/tourism":{title:"Maharashtra Tourism Travel Enquiries",description:"Explore Ajanta, Ellora, Ghrishneshwar, Trimbakeshwar and Bhimashankar, then send your travel requirement."},
-  "/one-way-travel":{title:"One-Way Travel Enquiries",description:"Send your route, travel date and passenger details for a one-way travel enquiry with Kaaveri."},
-  "/corporate-travel":{title:"Corporate Transportation Enquiries",description:"Discuss employee, team and business transportation requirements with Kaaveri Tours and Travels."},
-  "/vehicles":{title:"Travel Vehicles — Sedan and Innova Crysta Enquiries",description:"Sedan and Innova Crysta style travel classes for tourism, one-way and group journeys from Chhatrapati Sambhajinagar."},
-  "/contact":{title:"Contact Kaaveri Tours and Travels",description:"Send a travel enquiry or contact Kaaveri by WhatsApp, phone or email in Chhatrapati Sambhajinagar."}
-} as const;
+  "/":{
+    en:{title:"Kaaveri Tours and Travels, Chhatrapati Sambhajinagar",description:"Tours to Ajanta, Ellora and Jyotirlinga temples, one-way travel and employee transport from Chhatrapati Sambhajinagar (Aurangabad). Enquire on WhatsApp."},
+    mr:{title:"कावेरी टूर्स अँड ट्रॅव्हल्स, छत्रपती संभाजीनगर",description:"छत्रपती संभाजीनगरहून अजिंठा, वेरूळ आणि ज्योतिर्लिंग सहली, एकमार्गी प्रवास आणि कर्मचारी वाहतूक. व्हॉट्सॲपवर चौकशी करा."}
+  },
+  "/about":{
+    en:{title:"About Us",description:"Kaaveri Tours and Travels is a travel desk in Jyoti Nagar, Chhatrapati Sambhajinagar, arranging heritage trips, one-way travel and employee transport."},
+    mr:{title:"आमच्याबद्दल",description:"कावेरी टूर्स अँड ट्रॅव्हल्स हे ज्योती नगर, छत्रपती संभाजीनगर येथील प्रवास कार्यालय आहे. वारसा सहली, एकमार्गी प्रवास आणि कर्मचारी वाहतुकीची व्यवस्था."}
+  },
+  "/tourism":{
+    en:{title:"Ajanta, Ellora and Temple Trips",description:"Trips from Chhatrapati Sambhajinagar to Ellora, Ghrishneshwar, Ajanta, Trimbakeshwar and Bhimashankar. Send your date and group size."},
+    mr:{title:"अजिंठा, वेरूळ, ज्योतिर्लिंग सहली",description:"छत्रपती संभाजीनगरहून अजिंठा, वेरूळ, घृष्णेश्वर, त्र्यंबकेश्वर आणि भीमाशंकर सहली. तारीख आणि प्रवाशांची संख्या पाठवा."}
+  },
+  "/one-way-travel":{
+    en:{title:"One-Way Travel by Car",description:"Point-to-point travel from Chhatrapati Sambhajinagar by sedan or SUV. Send your pickup, drop, date and passenger count."},
+    mr:{title:"एकमार्गी टॅक्सी प्रवास",description:"छत्रपती संभाजीनगरहून सेडान किंवा एसयूव्हीने एकमार्गी प्रवास. पिकअप, ड्रॉप, तारीख आणि प्रवासी संख्या पाठवा."}
+  },
+  "/corporate-travel":{
+    en:{title:"Employee Transport for Companies",description:"Employee pickup, drop and shift transport for companies in Chhatrapati Sambhajinagar. Share your route, shift timings and headcount."},
+    mr:{title:"कंपन्यांसाठी कर्मचारी वाहतूक",description:"छत्रपती संभाजीनगरमधील कंपन्यांसाठी कर्मचारी पिकअप, ड्रॉप आणि शिफ्ट वाहतूक. मार्ग, शिफ्टच्या वेळा आणि कर्मचारी संख्या सांगा."}
+  },
+  "/vehicles":{
+    en:{title:"Sedan and SUV Travel",description:"Choose a sedan for up to four passengers or a seven-seater SUV for families and groups travelling from Chhatrapati Sambhajinagar."},
+    mr:{title:"सेडान आणि एसयूव्ही प्रवास",description:"चार प्रवाशांपर्यंत सेडान किंवा कुटुंब व गटांसाठी सात आसनी एसयूव्ही. छत्रपती संभाजीनगरहून प्रवासाची चौकशी करा."}
+  },
+  "/contact":{
+    en:{title:"Contact and Travel Enquiry",description:"Send a travel enquiry or reach Kaaveri on WhatsApp at +91 92727 27216, by phone or by email. Jyoti Nagar, Chhatrapati Sambhajinagar."},
+    mr:{title:"संपर्क आणि प्रवास चौकशी",description:"प्रवासाची चौकशी पाठवा किंवा +91 92727 27216 वर व्हॉट्सॲप, फोन किंवा ईमेलने कावेरीशी संपर्क करा. ज्योती नगर, छत्रपती संभाजीनगर."}
+  }
+} as const satisfies Record<string,Record<Locale,RouteCopy>>;
 
 export type CanonicalPath=keyof typeof canonicalRoutes;
 
@@ -30,7 +56,7 @@ export function isProductionIndexable(
 ){
   // A deployment can be public long before its final domain is ready. Keep every
   // preview (and an accidental production deployment) out of search until the
-  // owner deliberately enables indexing after the canonical www domain works.
+  // owner deliberately enables indexing after the canonical domain works.
   return env==="production"&&allowIndexing==="true";
 }
 
@@ -40,16 +66,41 @@ export function robotsPolicy(env?:string):Metadata["robots"]{
     : {index:false,follow:false,noarchive:true};
 }
 
+const googleVerification=process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
+const bingVerification=process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION?.trim();
+
+export function rootMetadata(locale:Locale):Metadata{
+  const home=canonicalRoutes["/"][locale];
+  return {
+    metadataBase:new URL(SITE_ORIGIN),
+    title:{default:home.title,template:`%s | ${brand[locale]}`},
+    description:home.description,
+    applicationName:siteData.name,
+    creator:siteData.name,
+    publisher:siteData.name,
+    manifest:"/manifest.webmanifest",
+    formatDetection:{telephone:false,email:false,address:false},
+    robots:robotsPolicy(),
+    verification:googleVerification||bingVerification?{
+      ...(googleVerification?{google:googleVerification}:{}),
+      ...(bingVerification?{other:{"msvalidate.01":bingVerification}}:{})
+    }:undefined
+  };
+}
+
+export const rootViewport:Viewport={width:"device-width",initialScale:1,viewportFit:"cover",themeColor:"#17283d"};
+
 export function createRouteMetadata(path:CanonicalPath,locale:Locale="en"):Metadata{
-  const route=canonicalRoutes[path];
+  const route=canonicalRoutes[path][locale];
   const canonical=absoluteUrl(localizedPath(path,locale));
   const image=absoluteUrl(SOCIAL_IMAGE_PATH);
+  const fullTitle=path==="/"?route.title:`${route.title} | ${brand[locale]}`;
   return {
-    title:route.title,
+    title:path==="/"?{absolute:route.title}:route.title,
     description:route.description,
     alternates:{canonical,languages:Object.fromEntries(Object.entries(languageAlternatePaths(path)).map(([key,value])=>[key,absoluteUrl(value)]))},
     robots:robotsPolicy(),
-    openGraph:{type:"website",siteName:siteData.name,url:canonical,title:route.title,description:route.description,images:[{url:image,width:1200,height:630,alt:siteData.name}]},
-    twitter:{card:"summary_large_image",title:route.title,description:route.description,images:[image]}
+    openGraph:{type:"website",siteName:brand[locale],locale:locale==="mr"?"mr_IN":"en_IN",alternateLocale:locale==="mr"?["en_IN"]:["mr_IN"],url:canonical,title:fullTitle,description:route.description,images:[{url:image,width:1200,height:630,alt:brand[locale]}]},
+    twitter:{card:"summary_large_image",title:fullTitle,description:route.description,images:[image]}
   };
 }

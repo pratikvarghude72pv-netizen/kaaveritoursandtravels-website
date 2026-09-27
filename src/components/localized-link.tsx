@@ -6,7 +6,7 @@ import {localizedPath,type Locale} from "@/lib/locale";
 import type {CanonicalPath} from "@/lib/seo";
 
 function localizeHref(href:string,locale:Locale){
-  const match=href.match(/^(\/|\/about|\/tourism|\/one-way-travel|\/corporate-travel|\/contact)(?=\?|#|$)/);
+  const match=href.match(/^(\/|\/about|\/tourism|\/one-way-travel|\/corporate-travel|\/vehicles|\/contact)(?=\?|#|$)/);
   if(!match)return href;
   return `${localizedPath(match[1] as CanonicalPath,locale)}${href.slice(match[1].length)}`;
 }

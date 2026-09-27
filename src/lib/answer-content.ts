@@ -1,23 +1,32 @@
+/** Each question lives on one page only (see pageAnswers in structured-data.ts). */
 export const answerContent={
-  tourism:{
-    en:{heading:"What can I enquire about?",body:"The website presents Ajanta, Ellora, Ghrishneshwar, Trimbakeshwar and Bhimashankar. Choose a destination and share your date, pickup point and group details. An enquiry is not a fixed package or a confirmed itinerary."},
-    mr:{heading:"मी कशाबद्दल चौकशी करू शकतो?",body:"वेबसाइटवर अजिंठा, वेरूळ, घृष्णेश्वर, त्र्यंबकेश्वर आणि भीमाशंकर ही स्थळे दाखवली आहेत. स्थळ निवडून तारीख, पिकअप ठिकाण आणि गटाचे तपशील पाठवा. चौकशी म्हणजे ठराविक पॅकेज किंवा निश्चित प्रवास आराखडा नाही."}
+  home:{
+    en:{heading:"Who is Kaaveri Tours and Travels?",body:"A travel desk in Jyoti Nagar, Chhatrapati Sambhajinagar (formerly Aurangabad), Maharashtra. It arranges sedans and seven-seater SUVs for trips to Ellora, Ajanta and the Jyotirlinga temples at Ghrishneshwar, Trimbakeshwar and Bhimashankar, for one-way travel to other cities, and for employee pickup and drop. Enquire on WhatsApp at +91 92727 27216 or call +91 86003 20320, in Marathi or English."},
+    mr:{heading:"कावेरी टूर्स अँड ट्रॅव्हल्स म्हणजे काय?",body:"ज्योती नगर, छत्रपती संभाजीनगर (पूर्वीचे औरंगाबाद), महाराष्ट्र येथील प्रवास कार्यालय. वेरूळ, अजिंठा आणि घृष्णेश्वर, त्र्यंबकेश्वर, भीमाशंकर या ज्योतिर्लिंग मंदिरांच्या सहलींसाठी, दुसऱ्या शहरापर्यंतच्या एकमार्गी प्रवासासाठी आणि कर्मचारी पिकअप-ड्रॉपसाठी सेडान आणि सात आसनी एसयूव्हीची व्यवस्था करते. +91 92727 27216 वर व्हॉट्सॲप करा किंवा +91 86003 20320 वर कॉल करा, मराठी किंवा इंग्रजीत."}
+  },
+  distances:{
+    en:{heading:"How far are Ajanta, Ellora and the Jyotirlinga temples from Chhatrapati Sambhajinagar?",body:"Approximate road distances and drive times from the city: Ellora and Ghrishneshwar about 30 km (about 45 minutes each way), Ajanta about 100 km (2.5 to 3 hours), Trimbakeshwar about 210 km (about 5 hours) and Bhimashankar about 250 km (about 6 hours). Traffic, the route and stops change the times."},
+    mr:{heading:"छत्रपती संभाजीनगरहून अजिंठा, वेरूळ आणि ज्योतिर्लिंग मंदिरे किती दूर आहेत?",body:"शहरापासून अंदाजे अंतर आणि प्रवासाचा वेळ: वेरूळ आणि घृष्णेश्वर सुमारे ३० किमी (एका बाजूने सुमारे ४५ मिनिटे), अजिंठा सुमारे १०० किमी (अडीच ते तीन तास), त्र्यंबकेश्वर सुमारे २१० किमी (सुमारे ५ तास) आणि भीमाशंकर सुमारे २५० किमी (सुमारे ६ तास). वाहतूक, मार्ग आणि थांब्यांनुसार वेळ बदलतो."}
+  },
+  bestTime:{
+    en:{heading:"When is the best time to visit Ajanta and Ellora?",body:"October to March is the most comfortable season, with cooler days. The monsoon, June to September, turns the Ajanta gorge and the Bhimashankar forest green. Ajanta is closed on Mondays and Ellora on Tuesdays."},
+    mr:{heading:"अजिंठा आणि वेरूळ पाहण्यासाठी योग्य वेळ कोणती?",body:"ऑक्टोबर ते मार्च हा सर्वात आरामदायक काळ आहे. जून ते सप्टेंबरच्या पावसाळ्यात अजिंठ्याची दरी आणि भीमाशंकरचे जंगल हिरवेगार होते. अजिंठा सोमवारी आणि वेरूळ मंगळवारी बंद असते."}
   },
   oneWay:{
-    en:{heading:"What does one-way travel mean here?",body:"It means a point-to-point journey without a return trip in the same enquiry. Share the pickup, drop point, preferred date and passenger count so the requirement can be reviewed."},
-    mr:{heading:"येथे एकमार्गी प्रवास म्हणजे काय?",body:"याचा अर्थ त्याच चौकशीत परतीचा प्रवास नसलेला एका ठिकाणाहून दुसऱ्या ठिकाणापर्यंतचा प्रवास. गरज पाहण्यासाठी पिकअप, ड्रॉप ठिकाण, पसंतीची तारीख आणि प्रवाशांची संख्या पाठवा."}
+    en:{heading:"What if I also need to come back?",body:"Then it is not a one-way trip. Mention the return date in the same enquiry and the whole trip is planned together."},
+    mr:{heading:"परतही यायचे असल्यास काय?",body:"तर तो एकमार्गी प्रवास नाही. त्याच चौकशीत परतीची तारीख सांगा; संपूर्ण प्रवास एकत्र आखला जाईल."}
   },
   corporate:{
-    en:{heading:"What should a corporate enquiry include?",body:"Share the company and contact details, route or stops, shift timings and approximate employee movement. The enquiry starts a review and does not promise a vehicle or availability."},
-    mr:{heading:"कॉर्पोरेट चौकशीत काय समाविष्ट करावे?",body:"कंपनी व संपर्क तपशील, मार्ग किंवा थांबे, शिफ्टच्या वेळा आणि अंदाजे कर्मचारी प्रवास सांगा. चौकशीनंतर तपासणी सुरू होते; वाहन किंवा उपलब्धतेची हमी दिली जात नाही."}
+    en:{heading:"How many employees fit in one vehicle?",body:"A sedan carries up to four and a seven-seater SUV six to seven. For larger shifts, share the headcount per shift and Kaaveri will say what it can arrange."},
+    mr:{heading:"एका वाहनात किती कर्मचारी बसतात?",body:"सेडानमध्ये चार जणांपर्यंत आणि सात आसनी एसयूव्हीमध्ये सहा ते सात जण. मोठ्या शिफ्टसाठी प्रत्येक शिफ्टची कर्मचारी संख्या सांगा; कावेरी काय व्यवस्था करू शकते ते कळवेल."}
   },
   vehicles:{
-    en:{heading:"Which vehicle should I ask about?",body:"Sedans suit up to four passengers with luggage, while Innova Crysta style MPVs carry seven in comfort. Mention your preferred vehicle with the route, date and group size. The exact vehicle is confirmed during the conversation, never assumed on this page."},
-    mr:{heading:"मला कोणत्या गाडीबद्दल विचारावे?",body:"चार प्रवासी व सामानासाठी सेडान योग्य; सात प्रवाशांच्या आरामदायक प्रवासासाठी इनोव्हा क्रिस्टा प्रकारची एम.पी.व्ही. तुमचा मार्ग, तारीख, गट आणि पसंतीचे वाहन सांगा. नेमके वाहन संवादात निश्चित होते, फक्त या पानावर गृहीत धरले जात नाही."}
+    en:{heading:"Can I ask for a particular car model?",body:"Enquiries are taken by class: sedan or seven-seater SUV. Kaaveri confirms the vehicle for your date when it replies."},
+    mr:{heading:"विशिष्ट मॉडेलची गाडी मागता येते का?",body:"चौकशी वाहनाच्या प्रकारानुसार घेतली जाते: सेडान किंवा सात आसनी एसयूव्ही. तुमच्या तारखेचे वाहन कावेरी उत्तर देताना निश्चित करते."}
   },
   contact:{
-    en:{heading:"What happens after I submit?",body:"Your details are sent as a booking request for manual review. Kaaveri can then contact you to discuss the requirement. Submission does not confirm a booking, vehicle, itinerary, price or availability."},
-    mr:{heading:"फॉर्म पाठवल्यानंतर काय होते?",body:"तुमचे तपशील मॅन्युअल तपासणीसाठी बुकिंग विनंती म्हणून पाठवले जातात. त्यानंतर गरजेबद्दल चर्चा करण्यासाठी कावेरी तुमच्याशी संपर्क करू शकते. फॉर्म पाठवल्याने बुकिंग, वाहन, प्रवास आराखडा, किंमत किंवा उपलब्धता निश्चित होत नाही."}
+    en:{heading:"What happens after I send an enquiry?",body:"Your details reach Kaaveri as an enquiry. Kaaveri contacts you by phone or WhatsApp to agree the vehicle, pickup time and fare. Sending the form does not confirm a trip."},
+    mr:{heading:"चौकशी पाठवल्यानंतर काय होते?",body:"तुमचे तपशील चौकशी म्हणून कावेरीकडे पोहोचतात. वाहन, पिकअपची वेळ आणि भाडे ठरवण्यासाठी कावेरी फोन किंवा व्हॉट्सॲपवर संपर्क करते. फॉर्म पाठवल्याने प्रवास निश्चित होत नाही."}
   }
 } as const;
 export type AnswerIntent=keyof typeof answerContent;

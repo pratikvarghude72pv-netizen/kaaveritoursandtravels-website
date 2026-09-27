@@ -18,3 +18,7 @@ public/generated/*.avif
 .vercel
 .env*
 !.env.example
+
+# Local-only client deliverables (never deployed or committed)
+/brand-kit/
+/_handoff/

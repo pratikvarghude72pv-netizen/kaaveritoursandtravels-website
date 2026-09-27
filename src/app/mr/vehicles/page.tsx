@@ -1,4 +1,4 @@
-import Page from "@/app/vehicles/page";
+import Page from "@/app/(en)/vehicles/page";
 import {createRouteMetadata} from "@/lib/seo";
 export const metadata=createRouteMetadata("/vehicles","mr");
 export default Page;

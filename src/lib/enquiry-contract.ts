@@ -29,10 +29,19 @@ const topLevelKeys=new Set(["version","requestId","language","service","name","p
 const detailKeys:Record<EnquiryService,Set<string>>={
   tourism:new Set(["destination","preferredDate","travellers","vehicle"]),
   "one-way":new Set(["pickupPoint","dropPoint","travelDate","passengers","vehicle"]),
-  corporate:new Set(["company","route","schedule","employeesOrBuses"])
+  corporate:new Set(["company","route","startDate","schedule","employees"])
 };
 const uuidV4=/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-const phoneCharacters=/^[0-9+()\- ]+$/;
+/** Indian mobile number: +91 followed by 10 digits starting 6 to 9 (spaces allowed). */
+const indianMobile=/^\+91[6-9]\d{9}$/;
+const dateKeys=new Set(["preferredDate","travelDate","startDate"]);
+const countKeys=new Set(["travellers","passengers","employees"]);
+const isoDate=/^\d{4}-\d{2}-\d{2}$/;
+/** Yesterday in India (IST): accepts visitors in earlier time zones without allowing clearly past dates. */
+function earliestAllowedDate(now=new Date()){
+  const yesterday=new Date(now.getTime()-24*60*60*1000);
+  return yesterday.toLocaleDateString("en-CA",{timeZone:"Asia/Kolkata"});
+}
 
 function isRecord(value:unknown):value is Record<string,unknown>{return typeof value==="object"&&value!==null&&!Array.isArray(value)}
 function singleLine(value:string){return value.normalize("NFC").trim().replace(/[\t ]+/g," ")}
@@ -57,8 +66,7 @@ function parse(input:unknown):{enquiry?:ValidEnquiry;result?:EnquiryResult;bot?:
   const errors:Record<string,string>={};
   if(hasLineBreak(input.name)||name.length<2)errors.name="required";
   else if(name.length>80)errors.name="too_long";
-  const digitCount=(phone.match(/\d/g)||[]).length;
-  if(hasLineBreak(input.phone)||phone.length<7||phone.length>20||!phoneCharacters.test(phone)||digitCount<7)errors.phone="invalid";
+  if(hasLineBreak(input.phone)||!indianMobile.test(phone.replace(/ /g,"")))errors.phone="invalid";
   if(message&&message.length>1200)errors.message="too_long";
 
   const rawDetails=input.details??{};
@@ -69,6 +77,8 @@ function parse(input:unknown):{enquiry?:ValidEnquiry;result?:EnquiryResult;bot?:
     const normalized=singleLine(value);
     if(hasLineBreak(value)||normalized.length<1)errors[`details.${key}`]="required";
     else if(normalized.length>160)errors[`details.${key}`]="too_long";
+    else if(dateKeys.has(key)&&(!isoDate.test(normalized)||normalized<earliestAllowedDate()))errors[`details.${key}`]="past_date";
+    else if(countKeys.has(key)&&!/^[1-9]\d{0,2}$/.test(normalized))errors[`details.${key}`]="invalid";
     else details[key]=normalized;
   }
   if(Object.keys(errors).length)return {result:{status:422,code:"invalid_fields",fieldErrors:errors}};
