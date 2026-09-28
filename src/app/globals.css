@@ -54,11 +54,12 @@
   --black:#07090c;
 
   /* ---- WhatsApp brand (only for WhatsApp actions) ---- */
+  /* #25d366 is the WhatsApp glyph colour on dark grounds; white text sits only on 600 to 800 (4.5:1 or better). */
   --wa-500:#25d366;
-  --wa-600:#1ebe5a;
-  --wa-700:#128c7e;
+  --wa-600:#15884a;
+  --wa-700:#0e7c4a;
   --wa-800:#075e54;
-  --grad-whatsapp:linear-gradient(120deg,var(--wa-500) 0%,var(--wa-600) 40%,var(--wa-700) 82%,var(--wa-500) 100%);
+  --grad-whatsapp:linear-gradient(120deg,var(--wa-600) 0%,var(--wa-700) 45%,var(--wa-800) 85%,var(--wa-700) 100%);
   --shadow-wa:0 14px 30px -12px color-mix(in srgb,var(--wa-700) 62%,transparent);
 
   /* ---- Semantic ---- */
@@ -82,7 +83,9 @@
   --glass-line:color-mix(in srgb,var(--white) 16%,transparent);
 
   /* ---- Gradients ---- */
-  --grad-primary:linear-gradient(120deg,var(--orange-400) 0%,var(--orange-500) 38%,var(--orange-700) 78%,var(--orange-500) 100%);
+  /* Fill for anything carrying white text: every stop is 4.5:1 or better against white. The bright logo orange is for headings, icons and lines. */
+  --orange-650:#d4440f;
+  --grad-primary:linear-gradient(120deg,var(--orange-650) 0%,var(--orange-700) 45%,var(--orange-800) 85%,var(--orange-700) 100%);
   --grad-navy:linear-gradient(120deg,var(--navy-500) 0%,var(--navy-700) 42%,var(--navy-900) 82%,var(--navy-600) 100%);
   --grad-accent-text:linear-gradient(100deg,var(--orange-500),var(--orange-700));
   --grad-accent-text-dark:linear-gradient(100deg,var(--orange-300),var(--orange-400));
