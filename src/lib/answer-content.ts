@@ -1,8 +1,9 @@
+import {siteData} from "@/lib/site-data";
 /** Each question lives on one page only (see pageAnswers in structured-data.ts). */
 export const answerContent={
   home:{
-    en:{heading:"Who is Kaaveri Tours and Travels?",body:"A travel desk in Jyoti Nagar, Chhatrapati Sambhajinagar (formerly Aurangabad), Maharashtra. It arranges sedans and seven-seater SUVs for trips to Ellora, Ajanta and the Jyotirlinga temples at Ghrishneshwar, Trimbakeshwar and Bhimashankar, for one-way travel to other cities, and for employee pickup and drop. Enquire on WhatsApp at +91 92727 27216 or call +91 86003 20320, in Marathi or English."},
-    mr:{heading:"कावेरी टूर्स अँड ट्रॅव्हल्स म्हणजे काय?",body:"ज्योती नगर, छत्रपती संभाजीनगर (पूर्वीचे औरंगाबाद), महाराष्ट्र येथील प्रवास कार्यालय. वेरूळ, अजिंठा आणि घृष्णेश्वर, त्र्यंबकेश्वर, भीमाशंकर या ज्योतिर्लिंग मंदिरांच्या सहलींसाठी, दुसऱ्या शहरापर्यंतच्या एकमार्गी प्रवासासाठी आणि कर्मचारी पिकअप-ड्रॉपसाठी सेडान आणि सात आसनी एसयूव्हीची व्यवस्था करते. +91 92727 27216 वर व्हॉट्सॲप करा किंवा +91 86003 20320 वर कॉल करा, मराठी किंवा इंग्रजीत."}
+    en:{heading:"Who is Kaaveri Tours and Travels?",body:`A travel desk in Jyoti Nagar, Chhatrapati Sambhajinagar (formerly Aurangabad), Maharashtra. It arranges sedans and seven-seater SUVs for trips to Ellora, Ajanta and the Jyotirlinga temples at Ghrishneshwar, Trimbakeshwar and Bhimashankar, for one-way travel to other cities, and for employee pickup and drop. Enquire on WhatsApp at ${siteData.phone} or call ${siteData.secondaryPhone}, in Marathi or English.`},
+    mr:{heading:"कावेरी टूर्स अँड ट्रॅव्हल्स म्हणजे काय?",body:`ज्योती नगर, छत्रपती संभाजीनगर (पूर्वीचे औरंगाबाद), महाराष्ट्र येथील प्रवास कार्यालय. वेरूळ, अजिंठा आणि घृष्णेश्वर, त्र्यंबकेश्वर, भीमाशंकर या ज्योतिर्लिंग मंदिरांच्या सहलींसाठी, दुसऱ्या शहरापर्यंतच्या एकमार्गी प्रवासासाठी आणि कर्मचारी पिकअप-ड्रॉपसाठी सेडान आणि सात आसनी एसयूव्हीची व्यवस्था करते. ${siteData.phone} वर व्हॉट्सॲप करा किंवा ${siteData.secondaryPhone} वर कॉल करा, मराठी किंवा इंग्रजीत.`}
   },
   distances:{
     en:{heading:"How far are Ajanta, Ellora and the Jyotirlinga temples from Chhatrapati Sambhajinagar?",body:"Approximate road distances and drive times from the city: Ellora and Ghrishneshwar about 30 km (about 45 minutes each way), Ajanta about 100 km (2.5 to 3 hours), Trimbakeshwar about 210 km (about 5 hours) and Bhimashankar about 250 km (about 6 hours). Traffic, the route and stops change the times."},
@@ -21,8 +22,8 @@ export const answerContent={
     mr:{heading:"एका वाहनात किती कर्मचारी बसतात?",body:"सेडानमध्ये चार जणांपर्यंत आणि सात आसनी एसयूव्हीमध्ये सहा ते सात जण. मोठ्या शिफ्टसाठी प्रत्येक शिफ्टची कर्मचारी संख्या सांगा; कावेरी काय व्यवस्था करू शकते ते कळवेल."}
   },
   vehicles:{
-    en:{heading:"Can I ask for a particular car model?",body:"Enquiries are taken by class: sedan or seven-seater SUV. Kaaveri confirms the vehicle for your date when it replies."},
-    mr:{heading:"विशिष्ट मॉडेलची गाडी मागता येते का?",body:"चौकशी वाहनाच्या प्रकारानुसार घेतली जाते: सेडान किंवा सात आसनी एसयूव्ही. तुमच्या तारखेचे वाहन कावेरी उत्तर देताना निश्चित करते."}
+    en:{heading:"Can I ask for a particular car model?",body:"Enquiries are taken by class: sedan, seven-seater SUV, or the Tempo Traveller minibus for larger groups. Kaaveri confirms the vehicle for your date when it replies."},
+    mr:{heading:"विशिष्ट मॉडेलची गाडी मागता येते का?",body:"चौकशी वाहनाच्या प्रकारानुसार घेतली जाते: सेडान, सात आसनी एसयूव्ही, किंवा मोठ्या गटांसाठी टेम्पो ट्रॅव्हलर मिनीबस. तुमच्या तारखेचे वाहन कावेरी उत्तर देताना निश्चित करते."}
   },
   contact:{
     en:{heading:"What happens after I send an enquiry?",body:"Your details reach Kaaveri as an enquiry. Kaaveri contacts you by phone or WhatsApp to agree the vehicle, pickup time and fare. Sending the form does not confirm a trip."},

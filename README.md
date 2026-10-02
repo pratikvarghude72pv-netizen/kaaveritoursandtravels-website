@@ -28,6 +28,6 @@ Never expose either value through a `NEXT_PUBLIC_` variable or commit secrets to
 
 ## Production domain
 
-Canonical origin: `https://www.kaaveritoursandtravels.com`
+Canonical origin: `https://kaaveritoursandtravels.com` (the apex domain; `siteData.origin` in `src/lib/site-data.ts` is the single source).
 
-The apex domain should permanently redirect to the canonical `www` origin after deployment.
+The `www` host currently has no valid certificate, so it is not used as the canonical origin.

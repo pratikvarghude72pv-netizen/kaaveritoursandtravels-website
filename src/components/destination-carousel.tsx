@@ -57,7 +57,7 @@ export function DestinationCarousel(){
     if(Math.abs(dx)>48&&Math.abs(dx)>Math.abs(dy)*1.4)go(index+(dx<0?1:-1));
   };
 
-  return <section ref={root} className={`dest-carousel${playing?" is-playing":""}${reduced?" is-reduced":""}`} aria-roledescription="carousel" aria-label={t("Destinations","स्थळे")}
+  return <section ref={root} tabIndex={0} className={`dest-carousel${playing?" is-playing":""}${reduced?" is-reduced":""}`} aria-roledescription="carousel" aria-label={t("Destinations","स्थळे")}
     onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)}
     onFocus={event=>{if((event.target as HTMLElement).matches(":focus-visible"))setFocusWithin(true)}} onBlur={event=>{if(!event.currentTarget.contains(event.relatedTarget as Node))setFocusWithin(false)}}
     onKeyDown={onKeyDown} style={{"--dc-interval":`${INTERVAL}ms`} as React.CSSProperties}>

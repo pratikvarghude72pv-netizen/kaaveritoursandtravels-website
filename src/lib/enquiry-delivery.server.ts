@@ -1,8 +1,9 @@
 import "server-only";
+import {siteData} from "@/lib/site-data";
 import type {EnquiryTransport,ValidEnquiry} from "@/lib/enquiry-contract";
 
 const RESEND_ENDPOINT="https://api.resend.com/emails";
-const DESTINATION="pratikvarghude72.pv@gmail.com";
+const DESTINATION=siteData.email;
 const TIMEOUT_MS=8000;
 
 function configured(){

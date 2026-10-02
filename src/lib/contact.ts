@@ -4,9 +4,10 @@ import {siteData} from "@/lib/site-data";
  * Every contact link on the site is built here, so a number or address changes in one place.
  * Numbers are stored in E.164 form for tel: and wa.me; display strings come from siteData.
  */
-const PRIMARY="+919272727216";
-const SECONDARY="+918600320320";
-const WHATSAPP="919272727216";
+const digits=(display:string)=>display.replace(/\D/g,"");
+const PRIMARY=`+${digits(siteData.phone)}`;
+const SECONDARY=`+${digits(siteData.secondaryPhone)}`;
+const WHATSAPP=digits(siteData.phone);
 
 const GREETING="Hello Kaaveri Tours and Travels,\nI would like to enquire about a trip.";
 
@@ -18,7 +19,7 @@ export const contact={
   primaryTel:`tel:${PRIMARY}`,
   secondaryTel:`tel:${SECONDARY}`,
   mailto:`mailto:${siteData.email}?subject=${encodeURIComponent("Travel enquiry")}`,
-  map:"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent("Jeevan Sneha Apartment, New SBH Colony, Jyoti Nagar, Chhatrapati Sambhajinagar, Maharashtra")
+  map:"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(siteData.mapQuery)
 } as const;
 
 /** WhatsApp chat link with a message already written, so the visitor only has to press send. */

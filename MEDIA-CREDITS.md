@@ -11,15 +11,12 @@ content has been generated or composited.
 | `ghrishneshwar-real.webp` | Ghrishneshwar Temple | Ms Sarah Welch | [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Grishneshwar_Shiva_temple_Maharashtra.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `trimbakeshwar-real.webp` | Trimbakeshwar Shiva Temple | Savitr1915 | [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Tryambakeshvara1.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `bhimashankar-real.webp` | Bhimashankar Wildlife Sanctuary | Nikhil More | [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Monsoon_Maharashtra_India_Rain_Landscape_(1)_06.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| `one-way-real.webp` | Malshej Ghat highway, Maharashtra | Aditya Patawari | [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:NH222_Highway_through_Malshej_Ghat_Maharashtra_India.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
-| `corporate-real.webp` | Mumbai bus transport | Andrew Thomas | [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Bus,_Mumbai_-_India,_April_15_2014._(14149239851).jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
-| `staff-shuttle-real.webp` | Staff transport example (Force Traveller van); number plate blurred | Yann Forget | [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Force_Traveller,_Leh-Manali_Highway.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
-| `sedan-real.webp` | Sedan travel-class example (Maruti Suzuki Dzire) | Aman Garg (User:Goodboy2009) | [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Maruti_Suzuki_Swift_Dzire.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
-| `suv-real.webp` | Seven-seater SUV travel-class example | Premnath Kudva (User:Premkudva) | [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Toyota_Innova_Crysta_2.4_Z_front_right.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 
-The corporate transport image (`staff-shuttle-real.webp`, which replaced the earlier city-bus photo `corporate-real.webp`, now unused) is illustrative only; it does not depict a Kaaveri
-vehicle, fleet, customer, or service operation.
+## Kaaveri's own fleet photography
 
-The sedan and Innova Crysta images on the `/vehicles` route are illustrative
-examples of each travel class. They do not depict Kaaveri's own vehicles; the
-exact vehicle for a journey is confirmed during the enquiry conversation.
+The `fleet-*-real.webp` files in `src/assets/media/` and the walkthrough video in `public/media/` show
+Kaaveri's own Tempo Traveller. They were supplied by the owner (phone photographs, WhatsApp photographs and a
+phone video, from which still frames were taken and the app watermark was cropped off), so no third-party
+licence applies. The raw originals are kept outside the repository.
+
+The sedan and SUV classes on the `/vehicles` route are offered on request and have no photographs.

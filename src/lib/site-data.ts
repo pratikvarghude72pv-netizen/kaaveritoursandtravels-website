@@ -16,6 +16,10 @@ export const siteData={
   phone:"+91 92727 27216",
   secondaryPhone:"+91 86003 20320",
   email:"pratikvarghude72.pv@gmail.com",
+  mapQuery:"Jeevan Sneha Apartment, New SBH Colony, Jyoti Nagar, Chhatrapati Sambhajinagar, Maharashtra",
+  /** Logo navy and page background. Must match --navy-800 and --navy-25 in globals.css. */
+  themeColor:"#003054",
+  backgroundColor:"#f8fafc",
   services:["tourism travel enquiries","one-way travel enquiries","employee transport enquiries"] as const,
   destinations:places
 } as const;

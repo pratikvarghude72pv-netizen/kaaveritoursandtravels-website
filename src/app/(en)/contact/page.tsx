@@ -24,7 +24,7 @@ export default function Page(){
       </div>
       <div className="contact-bento">
         <ParallaxMedia className="bento-large" src={siteMedia.bhimashankar} alt={{en:"Monsoon forest near Bhimashankar in the Sahyadri hills",mr:"सह्याद्रीतील भीमाशंकर परिसराचे पावसाळी जंगल"}} sizes="(max-width: 760px) 62vw, 34vw"><span><BilingualText en="Bhimashankar" mr="भीमाशंकर"/></span></ParallaxMedia>
-        <ParallaxMedia className="bento-small" src={siteMedia.oneWay} alt={{en:"Highway through the Malshej Ghat, Maharashtra",mr:"माळशेज घाटातून जाणारा महामार्ग, महाराष्ट्र"}} sizes="(max-width: 760px) 38vw, 20vw"><span><BilingualText en="On the road" mr="प्रवासात"/></span></ParallaxMedia>
+        <ParallaxMedia className="bento-small" src={siteMedia.fleetSeatsClose} alt={{en:"Blue and black seats with headrests inside Kaaveri's Tempo Traveller",mr:"कावेरीच्या टेम्पो ट्रॅव्हलरमधील हेडरेस्टसह निळ्या-काळ्या सीट्स"}} sizes="(max-width: 760px) 38vw, 20vw"><span><BilingualText en="On the road" mr="प्रवासात"/></span></ParallaxMedia>
       </div>
     </section>
     <section id="enquiry" aria-labelledby="enquiry-heading" className="contact-form-section" data-motion-reveal>

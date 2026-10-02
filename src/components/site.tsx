@@ -165,7 +165,7 @@ export function Footer(){
           <Link href={local("/tourism")}>{t("Heritage and temple trips","वारसा आणि मंदिर सहली")}</Link>
           <Link href={local("/one-way-travel")}>{t("One-way travel","एकमार्गी प्रवास")}</Link>
           <Link href={local("/corporate-travel")}>{t("Employee transport","कर्मचारी वाहतूक")}</Link>
-          <Link href={local("/vehicles")}>{t("Sedan and SUV","सेडान आणि एसयूव्ही")}</Link>
+          <Link href={local("/vehicles")}>{t("Tempo Traveller and cars","टेम्पो ट्रॅव्हलर आणि गाड्या")}</Link>
         </div>
         <div>
           <strong>{t("Destinations","स्थळे")}</strong>

@@ -9,6 +9,7 @@ const registeredSelectors=[
   ".service-grid",
   ".feature-grid",
   ".dest-carousel",
+  ".fleet-carousel",
   ".vehicle-cards",
   ".faq-section",
   ".cta-inner",

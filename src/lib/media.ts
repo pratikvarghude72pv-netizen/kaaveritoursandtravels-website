@@ -3,11 +3,21 @@ import ajanta from "@/assets/media/ajanta-real.webp";
 import bhimashankar from "@/assets/media/bhimashankar-real.webp";
 import ellora from "@/assets/media/ellora-real.webp";
 import ghrishneshwar from "@/assets/media/ghrishneshwar-real.webp";
-import oneWay from "@/assets/media/one-way-real.webp";
-import suv from "@/assets/media/suv-real.webp";
-import sedan from "@/assets/media/sedan-real.webp";
-import staffShuttle from "@/assets/media/staff-shuttle-real.webp";
 import trimbakeshwar from "@/assets/media/trimbakeshwar-real.webp";
+import fleetDashboardDusk from "@/assets/media/fleet-dashboard-dusk-real.webp";
+import fleetDashboardFront from "@/assets/media/fleet-dashboard-front-real.webp";
+import fleetInteriorPortrait from "@/assets/media/fleet-interior-portrait-real.webp";
+import fleetSeatsAisle from "@/assets/media/fleet-seats-aisle-real.webp";
+import fleetExteriorLeft from "@/assets/media/fleet-exterior-left-real.webp";
+import fleetExteriorFront from "@/assets/media/fleet-exterior-front-real.webp";
+import fleetExteriorRight from "@/assets/media/fleet-exterior-right-real.webp";
+import fleetSideSunset from "@/assets/media/fleet-side-sunset-real.webp";
+import fleetSideSunsetDoor from "@/assets/media/fleet-side-sunset-door-real.webp";
+import fleetSidePlate from "@/assets/media/fleet-side-plate-real.webp";
+import fleetSideWheel from "@/assets/media/fleet-side-wheel-real.webp";
+import fleetRearDecal from "@/assets/media/fleet-rear-decal-real.webp";
+import fleetSeatsClose from "@/assets/media/fleet-seats-close-real.webp";
+import fleetSeatsWindow from "@/assets/media/fleet-seats-window-real.webp";
 
 export type SiteImage = StaticImageData;
 
@@ -15,11 +25,27 @@ export type SiteImage = StaticImageData;
 export const siteMedia = {
   ajanta,
   bhimashankar,
-  corporate: staffShuttle,
   ellora,
   ghrishneshwar,
-  oneWay,
   trimbakeshwar,
-  suv,
-  sedan,
+  fleetDashboardDusk,
+  fleetDashboardFront,
+  fleetInteriorPortrait,
+  fleetSeatsAisle,
+  fleetExteriorLeft,
+  fleetExteriorFront,
+  fleetExteriorRight,
+  fleetSideSunset,
+  fleetSideSunsetDoor,
+  fleetSidePlate,
+  fleetSideWheel,
+  fleetRearDecal,
+  fleetSeatsClose,
+  fleetSeatsWindow,
+} as const;
+
+/** The fleet showcase video (watermark-free crop of Kaaveri's own footage) and its poster frame. */
+export const fleetVideo = {
+  src: "/media/fleet-interior-tour.mp4",
+  poster: fleetSideWheel,
 } as const;

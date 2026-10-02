@@ -3,7 +3,7 @@ import {siteData} from "@/lib/site-data";
 import {languageAlternatePaths,localizedPath,type Locale} from "@/lib/locale";
 
 // Vercel serves the apex as the production domain; www currently has no valid certificate.
-export const SITE_ORIGIN="https://kaaveritoursandtravels.com" as const;
+export const SITE_ORIGIN=siteData.origin;
 export const SOCIAL_IMAGE_PATH="/social/kaaveri-share.png" as const;
 
 const brand={en:siteData.name,mr:"कावेरी टूर्स अँड ट्रॅव्हल्स"} as const;
@@ -32,12 +32,12 @@ export const canonicalRoutes={
     mr:{title:"कंपन्यांसाठी कर्मचारी वाहतूक",description:"छत्रपती संभाजीनगरमधील कंपन्यांसाठी कर्मचारी पिकअप, ड्रॉप आणि शिफ्ट वाहतूक. मार्ग, शिफ्टच्या वेळा आणि कर्मचारी संख्या सांगा."}
   },
   "/vehicles":{
-    en:{title:"Sedan and SUV Travel",description:"Choose a sedan for up to four passengers or a seven-seater SUV for families and groups travelling from Chhatrapati Sambhajinagar."},
-    mr:{title:"सेडान आणि एसयूव्ही प्रवास",description:"चार प्रवाशांपर्यंत सेडान किंवा कुटुंब व गटांसाठी सात आसनी एसयूव्ही. छत्रपती संभाजीनगरहून प्रवासाची चौकशी करा."}
+    en:{title:"Sedan, SUV and Minibus Travel",description:"A sedan for up to four, a seven-seater SUV, or Kaaveri's own Tempo Traveller minibus for large groups travelling from Chhatrapati Sambhajinagar."},
+    mr:{title:"सेडान, एसयूव्ही आणि मिनीबस प्रवास",description:"चार जणांसाठी सेडान, सात आसनी एसयूव्ही, किंवा मोठ्या गटांसाठी कावेरीची स्वतःची टेम्पो ट्रॅव्हलर मिनीबस. छत्रपती संभाजीनगरहून प्रवास."}
   },
   "/contact":{
-    en:{title:"Contact and Travel Enquiry",description:"Send a travel enquiry or reach Kaaveri on WhatsApp at +91 92727 27216, by phone or by email. Jyoti Nagar, Chhatrapati Sambhajinagar."},
-    mr:{title:"संपर्क आणि प्रवास चौकशी",description:"प्रवासाची चौकशी पाठवा किंवा +91 92727 27216 वर व्हॉट्सॲप, फोन किंवा ईमेलने कावेरीशी संपर्क करा. ज्योती नगर, छत्रपती संभाजीनगर."}
+    en:{title:"Contact and Travel Enquiry",description:`Send a travel enquiry or reach Kaaveri on WhatsApp at ${siteData.phone}, by phone or by email. Jyoti Nagar, Chhatrapati Sambhajinagar.`},
+    mr:{title:"संपर्क आणि प्रवास चौकशी",description:`प्रवासाची चौकशी पाठवा किंवा ${siteData.phone} वर व्हॉट्सॲप, फोन किंवा ईमेलने कावेरीशी संपर्क करा. ज्योती नगर, छत्रपती संभाजीनगर.`}
   }
 } as const satisfies Record<string,Record<Locale,RouteCopy>>;
 
@@ -88,7 +88,7 @@ export function rootMetadata(locale:Locale):Metadata{
   };
 }
 
-export const rootViewport:Viewport={width:"device-width",initialScale:1,viewportFit:"cover",themeColor:"#17283d"};
+export const rootViewport:Viewport={width:"device-width",initialScale:1,viewportFit:"cover",themeColor:siteData.themeColor};
 
 export function createRouteMetadata(path:CanonicalPath,locale:Locale="en"):Metadata{
   const route=canonicalRoutes[path][locale];

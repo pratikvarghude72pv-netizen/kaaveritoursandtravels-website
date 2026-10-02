@@ -22,3 +22,12 @@ public/generated/*.avif
 # Local-only client deliverables (never deployed or committed)
 /brand-kit/
 /_handoff/
+
+# Local review / tooling folders and raw client originals (HEIC, MP4, WhatsApp JPEGs): never deployed or committed
+/logo-trace-proof/
+/vtracer-master/
+/src/assets/media/Client-side/
+/.tmp-preview/
+
+# Client delivery zip (built from brand-kit, not committed)
+/client-package/

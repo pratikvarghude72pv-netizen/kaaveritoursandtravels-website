@@ -13,6 +13,11 @@ const eslintConfig = defineConfig([
     "build/**",
     "archive/**",
     "qa-evidence/**",
+    // Local-only folders that are not part of the site (see .gitignore).
+    "brand-kit/**",
+    "_handoff/**",
+    "logo-trace-proof/**",
+    "vtracer-master/**",
     "next-env.d.ts",
   ]),
 ]);
