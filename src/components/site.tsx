@@ -120,7 +120,7 @@ export function Header(){
 
   return <><span className="scroll-progress" aria-hidden="true"/><header ref={headerRef} className={"site-header shell "+(hidden&&!open?"nav-hidden ":"")+(onDark&&!open?"on-dark":"")}>
     <Link className="brand" href={local("/")} onClick={()=>setOpen(false)}>
-      <Image className="brand-logo brand-logo-primary" src="/brand/kaaveri-logo.png" width={1200} height={400} alt={language==="mr"?"कावेरी टूर्स अँड ट्रॅव्हल्स":"Kaaveri Tours and Travels"} preload/>
+      <Image className="brand-logo brand-logo-primary" src="/brand/kaaveri-lockup-blue.svg" width={1200} height={400} alt={language==="mr"?"कावेरी टूर्स अँड ट्रॅव्हल्स":"Kaaveri Tours and Travels"} preload/>
     </Link>
     <button ref={triggerRef} className="menu-toggle" type="button" aria-label={navigationLabel} aria-expanded={open} aria-controls="site-navigation-panel" onClick={toggleMenu}>
       <span></span><span></span>
@@ -157,7 +157,7 @@ export function Footer(){
     <footer className="site-footer">
       <div className="shell footer-grid">
         <div className="footer-about">
-          <Link className="footer-brand" href={local("/")}><Image src="/brand/kaaveri-logo-white.png" width={1200} height={400} alt={t("Kaaveri Tours and Travels","कावेरी टूर्स अँड ट्रॅव्हल्स")}/></Link>
+          <Link className="footer-brand" href={local("/")}><Image src="/brand/kaaveri-lockup-white.svg" width={1200} height={400} alt={t("Kaaveri Tours and Travels","कावेरी टूर्स अँड ट्रॅव्हल्स")}/></Link>
           <p>{t("Heritage and temple trips, one-way travel and employee transport from Chhatrapati Sambhajinagar, Maharashtra.","छत्रपती संभाजीनगर, महाराष्ट्रातून वारसा आणि मंदिर सहली, एकमार्गी प्रवास आणि कर्मचारी वाहतूक.")}</p>
         </div>
         <div>

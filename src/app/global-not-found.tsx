@@ -20,7 +20,7 @@ export default function GlobalNotFound(){
   return <html lang="en">
     <body>
       <main className="not-found-page shell">
-        <Link href="/" className="not-found-brand"><Image src="/brand/kaaveri-logo.png" width={1200} height={400} alt="Kaaveri Tours and Travels" preload/></Link>
+        <Link href="/" className="not-found-brand"><Image src="/brand/kaaveri-lockup-blue.svg" width={1200} height={400} alt="Kaaveri Tours and Travels" preload/></Link>
         <p className="eyebrow">404</p>
         <h1>This page does not exist.</h1>
         <p lang="mr" className="not-found-mr">हे पान अस्तित्वात नाही.</p>
